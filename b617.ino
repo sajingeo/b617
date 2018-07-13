@@ -18,15 +18,21 @@
  */
 
 #include "TinyWireS.h"
-#define LED1_PIN         4              // ATtiny Pin 3
-#define LED2_PIN         1              // ATtiny Pin 6
 
-
-#define EYE_LEFT_LED  (4)    // pint 3
+#define EYE_LEFT_LED   (4)    // pint 3
 #define EYE_RIGHT_LED  (1)   // pin 6
+#define LED3           (3)
 #define I2C_SLAVE_ADDR  0x99  // (617 >> 2)
 // SDA- Pin 5
 // SCK- Pin 7
+
+void blink_led_three()
+{
+  digitalWrite(LED3, HIGH);
+  delay(100);
+  digitalWrite(LED3, LOW);
+  delay(100);
+}
 
 void blink_eye()
 {
@@ -63,6 +69,7 @@ void loop() {
   byte byteRcvd = 0;
   // put your main code here, to run repeatedly:
   blink_eye();
+  blink_led_three();
   if (TinyWireS.available()){           // got I2C input!
     byteRcvd = TinyWireS.receive();
     byteRcvd += 10;
