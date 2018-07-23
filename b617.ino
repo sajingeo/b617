@@ -9,7 +9,8 @@
  * board support https://cdn.sparkfun.com/assets/learn_tutorials/1/5/0/attiny-ide-1.6.x.zip
  * place the atiny folder in /Documents/Arduino/hardware
  * 
- * i2c library http://playground.arduino.cc/Code/USIi2c
+ * i2c library https://github.com/lucullusTheOnly/TinyWire
+ * NOTE :using this http://playground.arduino.cc/Code/USIi2c did not work !!
  * 
  * How to program the attiny85 SOIC 
  * https://learn.sparkfun.com/tutorials/tiny-avr-programmer-hookup-guide
@@ -17,7 +18,7 @@
  * 
  */
 
-#include "TinyWireS.h"
+#include <TinyWire.h>
 
 #define EYE_LEFT_LED   (4)    // pint 3
 #define EYE_RIGHT_LED  (1)   // pin 6
@@ -60,19 +61,23 @@ void blink_eye_fast(uint8_t val)
 
 void setup() {
   // put your setup code here, to run once:
+  noInterrupts(); // since INT0 is attached to ping 7
+  
   pinMode(EYE_LEFT_LED, OUTPUT);
   pinMode(EYE_RIGHT_LED, OUTPUT);
-  TinyWireS.begin(I2C_SLAVE_ADDR);
+  
+  TinyWire.begin(I2C_SLAVE_ADDR);
+  TinyWire.onRequest( onI2CRequest );
 }
 
 void loop() {
-  byte byteRcvd = 0;
-  // put your main code here, to run repeatedly:
+  interrupts();
   blink_eye();
   blink_led_three();
-  if (TinyWireS.available()){           // got I2C input!
-    byteRcvd = TinyWireS.receive();
-    TinyWireS.send(byteRcvd);
-    blink_eye_fast(byteRcvd);                  
+}
+
+  void onI2CRequest(int lenght) {
+  while(TinyWire.available()>0){
+    blink_eye_fast(TinyWire.read());
   }
 }
