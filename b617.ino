@@ -22,7 +22,7 @@
 #define EYE_LEFT_LED   (4)    // pint 3
 #define EYE_RIGHT_LED  (1)   // pin 6
 #define LED3           (3)
-#define I2C_SLAVE_ADDR  0x99  // (617 >> 2)
+#define I2C_SLAVE_ADDR  0x9A  // (617 >> 2)
 // SDA- Pin 5
 // SCK- Pin 7
 
@@ -44,16 +44,16 @@ void blink_eye()
   delay(1000);
 }
 
-void blink_eye_fast()
+void blink_eye_fast(uint8_t val)
 {
-  for (int i = 0; i<= 99999;i++)
+  for (int i = 0; i<= val;i++)
   {
     digitalWrite(EYE_LEFT_LED, HIGH);
     digitalWrite(EYE_RIGHT_LED, HIGH);
-    delay(100);
+    delay(200);
     digitalWrite(EYE_LEFT_LED, LOW);
     digitalWrite(EYE_RIGHT_LED, LOW);
-    delay(100);
+    delay(200);
   }
 }
 
@@ -72,8 +72,7 @@ void loop() {
   blink_led_three();
   if (TinyWireS.available()){           // got I2C input!
     byteRcvd = TinyWireS.receive();
-    byteRcvd += 10;
     TinyWireS.send(byteRcvd);
-    blink_eye_fast();                  
+    blink_eye_fast(byteRcvd);                  
   }
 }
