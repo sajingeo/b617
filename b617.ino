@@ -30,7 +30,7 @@
 void blink_led_three()
 {
   digitalWrite(LED3, HIGH);
-  delay(100);
+  delay(500);
   digitalWrite(LED3, LOW);
   delay(100);
 }
@@ -65,6 +65,7 @@ void setup() {
   
   pinMode(EYE_LEFT_LED, OUTPUT);
   pinMode(EYE_RIGHT_LED, OUTPUT);
+  pinMode(LED3, OUTPUT);
   
   TinyWire.begin(I2C_SLAVE_ADDR);
   TinyWire.onRequest( onI2CRequest );
