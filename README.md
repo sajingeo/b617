@@ -17,6 +17,12 @@ place the TineyWireS folder in /Documents/Arduino/library
 ### How to program the attiny85 SOIC 
 https://learn.sparkfun.com/tutorials/tiny-avr-programmer-hookup-guide
 
+### NOTEs
+This will not work with Bus pirate / RPI [ does not implement full i2c] [link to why](https://github.com/rambo/TinyWire)
+
+### Todo
+Change default address 0x26 
+
 ### tools
 https://www.sparkfun.com/products/13153
 
