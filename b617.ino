@@ -15,8 +15,10 @@
  * https://learn.sparkfun.com/tutorials/tiny-avr-programmer-hookup-guide
  * https://www.sparkfun.com/products/13153
  * 
+ * Version 1.0
+ * 
  */
-#include "TinyWireS.h" 
+#include "TinyWireS.h"
 
 #define EYE_LEFT_LED   (4)    // pint 3
 #define EYE_RIGHT_LED  (1)   // pin 6
