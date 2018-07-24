@@ -9,7 +9,7 @@
  * board support https://cdn.sparkfun.com/assets/learn_tutorials/1/5/0/attiny-ide-1.6.x.zip
  * place the atiny folder in /Documents/Arduino/hardware
  * 
- * http://playground.arduino.cc/Code/USIi2c 
+ * I2C Lib : https://github.com/lucullusTheOnly/TinyWire
  * 
  * How to program the attiny85 SOIC 
  * https://learn.sparkfun.com/tutorials/tiny-avr-programmer-hookup-guide
@@ -18,7 +18,8 @@
  * Version 1.0
  * 
  */
-#include "TinyWireS.h"
+//#include "TinyWireS.h"
+#include <TinyWire.h>
 
 #define EYE_LEFT_LED   (4)    // pint 3
 #define EYE_RIGHT_LED  (1)   // pin 6
@@ -26,6 +27,10 @@
 #define I2C_SLAVE_ADDR  0x26 
 // SDA- Pin 5
 // SCK- Pin 7
+
+bool we_heard_our_address = false;
+
+char data_to_send[] = "Ya badge’s wicked pissa";
 
 void blink_led_three()
 {
@@ -66,7 +71,10 @@ void setup() {
   pinMode(EYE_LEFT_LED, OUTPUT);
   pinMode(EYE_RIGHT_LED, OUTPUT);
   pinMode(LED3, OUTPUT);
-  TinyWireS.begin(I2C_SLAVE_ADDR);
+//  TinyWireS.begin(I2C_SLAVE_ADDR);
+  TinyWire.begin( I2C_SLAVE_ADDR );
+  TinyWire.onRequest( onI2CRequest );
+  TinyWire.onReceive( onI2CReceive );
 }
 
 void loop() {
@@ -74,10 +82,26 @@ void loop() {
   byte byteRcvd = 0;
   blink_eye();
   blink_led_three();
-  if (TinyWireS.available()){           // got I2C
-    byteRcvd = TinyWireS.receive();     
+  if(we_heard_our_address)
+  {
+    we_heard_our_address = false;
     blink_eye_fast(10);
-    byteRcvd += 10;
-    TinyWireS.send(byteRcvd);           // send it back
   }
 }
+
+void onI2CRequest() {
+  for(int i=0; i<= 23 ;i++)
+  {
+     TinyWire.send(data_to_send[i]);
+  }
+}
+
+void onI2CReceive(int howMany){
+  // loops, until all received bytes are read
+  while(TinyWire.available()>0){
+    TinyWire.read();
+    we_heard_our_address = true;
+  }
+  }
+
+
