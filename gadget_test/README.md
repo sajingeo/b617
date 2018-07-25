@@ -1,7 +1,11 @@
-# DC617 Badge for DC26 I2C test code
+# DC26 Shitty Add-on tester
 
 ### kit used
-https://www.sparkfun.com/products/12640
+https://www.sparkfun.com/products/12587
 
-### support talking to address 0x26
-hook up the shitty connector and see the blink change!!
+### Here is the menu
+communication - UART, 115200, 8N1
+send m to see the menu.
+
+
+### Credits
