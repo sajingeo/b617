@@ -1,6 +1,6 @@
-# DC617 Badge for DC26 Test code
+# DC617 Badge challenge for DC26
 
-Credits to [@TheDukeZip](https://twitter.com/TheDukeZip) [@sajingeo](https://github.com/sajingeo)
+Credits to [@Eber24](https://twitter.com/eber) [@sajingeo](https://github.com/sajingeo)
 
 
 ## Resources
@@ -10,18 +10,30 @@ board support https://cdn.sparkfun.com/assets/learn_tutorials/1/5/0/attiny-ide-1
 place the atiny folder in /Documents/Arduino/hardware
 
 
-i2c library http://playground.arduino.cc/Code/USIi2c
+i2c library https://github.com/lucullusTheOnly/TinyWire
 
-place the TineyWireS folder in /Documents/Arduino/library
+place the TineyWire folder in /Documents/Arduino/library
 
 ### How to program the attiny85 SOIC 
-https://learn.sparkfun.com/tutorials/tiny-avr-programmer-hookup-guide
+https://learn.sparkfun.com/tutorials/tiny-avr-programmer-hookup-guide/all
+
+### Setup the board
+
+Cut the traces
+![Step 1]https://raw.github.com/sajingeo/dc617badgecode/img/img1.jpeg
+
+Solder the I2C Pullups and the IC (U1)
+![Step 3]https://raw.github.com/sajingeo/dc617badgecode/img/img2.JPG
+
+### Program the IC
+I used the Tiny programmer from sparkfun to program the IC, The ATTiny85v will work at 1.8v to 5v.
+![Step 1]https://raw.github.com/sajingeo/dc617badgecode/img/img3.JPG
+
+more details on the hookup here.
+https://learn.sparkfun.com/tutorials/tiny-avr-programmer-hookup-guide/all
 
 ### NOTEs
 This will not work with Bus pirate / RPI [ does not implement full i2c] [link to why](https://github.com/rambo/TinyWire)
-
-### Todo
-Change default address 0x26 
 
 ### tools
 https://www.sparkfun.com/products/13153
