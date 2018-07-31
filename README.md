@@ -31,7 +31,7 @@ Solder the I2C Pullups and the IC (U1)
 
 ### Program the IC
 I used the Tiny programmer from sparkfun to program the IC, The ATTiny85v will work at 1.8v to 5v.
-![Step 1](img/img3.JPG)
+![Step 3](img/img3.JPG)
 
 more details on the hookup here.
 https://learn.sparkfun.com/tutorials/tiny-avr-programmer-hookup-guide/all
