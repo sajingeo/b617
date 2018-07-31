@@ -20,14 +20,14 @@ https://learn.sparkfun.com/tutorials/tiny-avr-programmer-hookup-guide/all
 ### Setup the board
 
 Cut the traces
-![Step 1]https://raw.github.com/sajingeo/dc617badgecode/img/img1.jpeg
+![Step 1]https://raw.github.com/sajingeo/b617/img/img1.jpg
 
 Solder the I2C Pullups and the IC (U1)
-![Step 3]https://raw.github.com/sajingeo/dc617badgecode/img/img2.JPG
+![Step 3]https://raw.github.com/sajingeo/b617/img/img2.jpg
 
 ### Program the IC
 I used the Tiny programmer from sparkfun to program the IC, The ATTiny85v will work at 1.8v to 5v.
-![Step 1]https://raw.github.com/sajingeo/dc617badgecode/img/img3.JPG
+![Step 1]https://raw.github.com/sajingeo/b617/img/img3.JPG
 
 more details on the hookup here.
 https://learn.sparkfun.com/tutorials/tiny-avr-programmer-hookup-guide/all
