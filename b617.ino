@@ -24,7 +24,7 @@
 #define EYE_LEFT_LED   (3)    // pint 3
 #define EYE_RIGHT_LED  (4)   // pin 6
 #define LED3           (1)
-#define I2C_SLAVE_ADDR  0x26 
+#define I2C_SLAVE_ADDR  0x17 
 // SDA- Pin 5
 // SCK- Pin 7
 

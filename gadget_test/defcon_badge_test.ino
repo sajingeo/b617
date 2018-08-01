@@ -1,5 +1,5 @@
 #include <Wire.h>
-#define BADGES_KNOWN     (6)
+#define BADGES_KNOWN     (7)
 
 uint8_t list_of_badge[16]={0};
 uint8_t number_of_badge_found=0;
@@ -12,11 +12,12 @@ char* known_badge_names[BADGES_KNOWN]={
   "MR ROBOT",
   "MR ROBOT",
   "MR BLINK BLING",
-  "DC617"
+  "DC617",
+  "UNKNOWN BADGE"
 };
 
 uint8_t know_address[BADGES_KNOWN]={
-  0x30,0x18,0x60,0xA0,0x42,0x26
+  0x30,0x18,0x60,0xA0,0x42,0x17
 };
 
 
@@ -43,6 +44,7 @@ static uint8_t lookup_badge_id(uint8_t address)
     if (know_address[i] == address)
         {return i;}
   }
+  return 6;
 }
 
 static void search_for_badges()
