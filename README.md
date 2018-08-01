@@ -1,6 +1,27 @@
 # DC617 Badge challenge for DC26
 
-Credits to [@Eber24](https://twitter.com/eber) [@sajingeo](https://github.com/sajingeo)
+Credits to [@Eber24](https://twitter.com/eber) & [@sajingeo](https://github.com/sajingeo) for the CODE.
+
+
+
+Credits to [@TheDukeZip](https://twitter.com/TheDukeZip) for the PCB!! and amazing design!!
+
+
+
+Credits to [@AprilWright](https://twitter.com/aprilwright) for the DC617 Logo
+
+## Special Thanks
+@andMYhacks
+
+
+@dontlook
+
+
+@wr0
+
+
+@OriZigindere
+
 
 
 ## Resources
