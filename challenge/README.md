@@ -25,6 +25,10 @@ use brew to install avrdude
 #### MAC
 brew install avrdude
 
+#### Wiring
+http://dangerousprototypes.com/docs/Bus_Pirate_AVR_Programming
+http://wiki.attie.co.uk/wiki/Avrdude
+
 #### Windows
 http://fab.cba.mit.edu/classes/863.16/doc/projects/ftsmin/windows_avr.html
 
