@@ -15,7 +15,9 @@
  * https://learn.sparkfun.com/tutorials/tiny-avr-programmer-hookup-guide
  * https://www.sparkfun.com/products/13153
  * 
- * Version 1.2
+ * Version 1.3
+ * 
+ * TEST CODE (test.hex)
  * 
  */
 //#include "TinyWireS.h"
