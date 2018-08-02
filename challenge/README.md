@@ -34,4 +34,8 @@ http://fab.cba.mit.edu/classes/863.16/doc/projects/ftsmin/windows_avr.html
 
 
 ### Flash hex
-avrdude -c buspirate -p t85 -P /dev/tty.usbserial-MEC1 -y -U flash:w:test.hex
+avrdude -c buspirate -p t85 -P /dev/tty.usbserial-MEC1 -y -U flash:w:dc617badge_challenge.hex
+
+OR
+
+avrdude -p t85 -c usbtiny -b 19200 -y -U flash:w:dc617badge_challenge.hex
