@@ -10,6 +10,18 @@ Credits to [@TheDukeZip](https://twitter.com/TheDukeZip) for the PCB!! and amazi
 
 Credits to [@AprilWright](https://twitter.com/aprilwright) for the DC617 Logo
 
+## Info
+Challenge - contains the hex, file for DC617 badge challenge
+
+Gadget test - A General purpose tool to interface / test / talk to other badges with the [shitty addon](https://hackaday.io/project/52950-defcon-26-shitty-add-ons)
+
+
+Img - images :)
+
+
+b617.ino - A starter project
+
+
 ## Special Thanks
 @andMYhacks
 
